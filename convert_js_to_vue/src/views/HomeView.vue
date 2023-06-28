@@ -1,13 +1,16 @@
 <template>
   <div>
-
+    <HomeWelcomeComp/>
   </div>
 </template>
 
 <script>
-  export default {
-    
+import HomeWelcomeComp from "@/components/HomeWelcomeComp.vue"
+export default {
+  components: {
+    HomeWelcomeComp
   }
+}
 </script>
 
 <style scoped>

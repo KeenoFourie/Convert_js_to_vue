@@ -1,13 +1,16 @@
 <template>
   <div>
-
+    <AboutComp/>
   </div>
 </template>
 
 <script>
-  export default {
-    
+import AboutComp from "@/components/AboutComp.vue"
+export default {
+  components: {
+    AboutComp
   }
+}
 </script>
 
 <style scoped>

@@ -1,15 +1,18 @@
 <template>
     <div>
-
+      <AdminComp/>
     </div>
-</template>
-
-<script>
-    export default {
-        
+  </template>
+  
+  <script>
+  import AdminComp from "@/components/AdminComp.vue"
+  export default {
+    components: {
+      AdminComp
     }
-</script>
-
-<style scoped>
-
-</style>
+  }
+  </script>
+  
+  <style scoped>
+  
+  </style>

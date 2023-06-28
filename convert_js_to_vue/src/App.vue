@@ -8,7 +8,6 @@
 import NavBarComp from "@/components/NavBarComp.vue"
 import FooterComp from "@/components/FooterComp.vue"
 export default {
-  name: 'HomeView',
   components: {
     NavBarComp,
     FooterComp

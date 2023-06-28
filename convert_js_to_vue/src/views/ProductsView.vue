@@ -1,15 +1,18 @@
 <template>
     <div>
-
+      <ProductsComp/>
     </div>
-</template>
-
-<script>
-    export default {
-        
+  </template>
+  
+  <script>
+  import ProductsComp from "@/components/ProductsComp.vue"
+  export default {
+    components: {
+      ProductsComp
     }
-</script>
-
-<style scoped>
-
-</style>
+  }
+  </script>
+  
+  <style scoped>
+  
+  </style>
