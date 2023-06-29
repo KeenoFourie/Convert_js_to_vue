@@ -1,15 +1,18 @@
 <template>
     <div>
-
+      <CheckoutComp/>
     </div>
-</template>
-
-<script>
-    export default {
-        
+  </template>
+  
+  <script>
+  import CheckoutComp from "@/components/CheckoutComp.vue"
+  export default {
+    components: {
+      CheckoutComp
     }
-</script>
-
-<style scoped>
-
-</style>
+  }
+  </script>
+  
+  <style scoped>
+  
+  </style>

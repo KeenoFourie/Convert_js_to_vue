@@ -17,8 +17,8 @@ content_1: "WELCOME TO",
                     <p>We ensure that you get the best prices at all times for cars that you need, quickly.</p>
                     </div>
                     <div id="linked_buttons">
-                    <a href="../views/ProductsView.vue" id="button_links">PRODUCTS<i class="bi bi-arrow-down"></i></a>
-                    <a href="../views/AdminView.vue" id="button_links">ADMIN<i class="bi bi-arrow-right"></i></a>
+                    <a href="/products" id="button_links">PRODUCTS<i class="bi bi-arrow-down"></i></a>
+                    <a href="/admin" id="button_links">ADMIN<i class="bi bi-arrow-right"></i></a>
                     </div>
                     </div>
             </div>

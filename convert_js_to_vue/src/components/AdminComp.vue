@@ -73,22 +73,22 @@
               <div id="admin_table">
               <table class="container-fluid-2">
                 <thead id="headings_for_table">
-                  <th id="id">ID:</th>
-                  <th id="car_model_width">Car Model:</th>
-                  <th id="image">Image:</th>
-                  <th>Price:</th>
-                        <th id="edit">Edit:</th>
-                        <th>Delete:</th>
+                  <th id="id" class="list">ID:</th>
+                  <th id="car_model_width" class="list">Car Model:</th>
+                  <th id="image" class="list">Image:</th>
+                  <th class="list">Price:</th>
+                        <th id="edit" class="list">Edit:</th>
+                        <th class="list">Delete:</th>
                     </thead>
                     <tbody id="product_list">
-                        <tr class="list">
-                            <td id="product_item_id">${data.id}</td>
-                            <td id="product_car_model">${data.car_model}</td>
-                            <td id="product_image"><img id="images_of_cars_in_javascript" class="image" src="${data.image_url}" loading="lazy" alt="${data.car_model}"></td>
-                            <td id="product_prices">${data.price}</td>
-                            <td id="product_edit_button">
+                        <tr class="list" v-for="featured_products in data" :key="featured_products.ID">
+                            <td id="product_item_id" class="list">{{ featured_products.id }}</td>
+                            <td id="product_car_model" class="list">{{ featured_products.car_model }}</td>
+                            <td id="product_image" class="list"><img id="images_of_cars_in_javascript" v-bind:src="featured_products.image_url" class="card-img-top img-fluid" v-bind:alt="featured_products.car_model"></td>
+                            <td id="product_prices" class="list">{{ featured_products.price }}</td>
+                            <td id="product_edit_button" class="list">
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">EDIT</button>
+                            <button type="button" class="btn btn-primary list" data-bs-toggle="modal" data-bs-target="#staticBackdrop">EDIT</button>
                             
                             <!-- Modal -->
                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -129,12 +129,26 @@
 
 
     </div>
-</template>
-
-<script>
+  </template>
+  
+  <script>
     export default {
-        
+      data() {
+        return {
+            data: []
+        }
+    },
+    methods: {
+        async fetchData() {
+            const res = await fetch("https://keenofourie.github.io/Json-Server-for-JSeomp-products/index.json");
+            let parsedData = await res.json()
+            this.data = parsedData.featured_products;
+        }
+    },
+    mounted() {
+      this.fetchData()
     }
+  }
 </script>
 
 <style scoped>
