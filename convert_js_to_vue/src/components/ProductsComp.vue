@@ -12,7 +12,7 @@
                             <p class="card-text">{{ featured_products.price }}</p>
                             <div id="buttons_products_display">
                                 <button class="btn btn-primary" id="cart_add" onclick='addToCheckout({index})'>+ Cart</button>
-                                <button class="btn btn-primary" id="view_more">View More</button>
+                                <button class="btn btn-primary" id="view_more" @click="viewMore()">View More</button>
                             </div>
                         </div>
                     </div>
@@ -26,6 +26,11 @@
 
 <script>
   export default {
+    methods: {
+      async viewMore() {
+        
+      }
+    },
   computed: {
       featured_products() {
           return this.$store.state.featured_products
@@ -36,6 +41,30 @@
       }
 };
 </script>
+
+
+
+<!-- 
+<script>
+// displaying products
+export default {
+data() {
+  return {
+    featured_products: []
+  }
+},
+methods: {
+  getFeatured_products() {
+    fetch('https://keenofourie.github.io/Json-Server-for-JSeomp-products/index.json')
+      .then(response => response.json())
+      .then(data => this.featured_products = data)
+  }
+},
+mounted() {
+  this.getFeatured_products()
+}
+}
+</script> -->
 
 <style scoped>
 

@@ -26,6 +26,18 @@ export default createStore({
         console.log(e.message);
       }
     }
+
+
+    ,
+    async fetchFeatured_products() {
+      try {
+        fetch('https://keenofourie.github.io/Json-Server-for-JSeomp-products/index.json')
+              .then(response => response.json())
+              .then(data => this.post = data)
+      } catch (e) {
+        console.log(e.message);
+      }
+    }
 },
   modules: {
   }

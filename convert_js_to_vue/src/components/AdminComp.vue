@@ -23,7 +23,7 @@
                                 <input type="text" class="modal-input" id="input_1" placeholder="Tesla..">
                                 <p>Image:</p>
                                 <input type="text" class="modal-input" id="input_2" placeholder="Insert image..">
-                                <p>Despcription:</p>
+                                <p>Description:</p>
                                 <input type="text" class="modal-input" id="input_3" placeholder="It's a car on 4 wheels..">
                                 <p>Price:</p>
                                 <input type="text" class="modal-input" id="input_4" placeholder="R20 000...">
@@ -103,7 +103,7 @@
                                           <input type="text" class="modal-input" placeholder="Tesla..">
                                           <p>Image:</p>
                                           <input type="text" class="modal-input" placeholder="Insert image..">
-                                          <p>Despcription:</p>
+                                          <p>Description:</p>
                                           <input type="text" class="modal-input" placeholder="It's a car on 4 wheels..">
                                           <p>Price:</p>
                                           <input type="text" class="modal-input" placeholder="R20 000...">
@@ -116,7 +116,7 @@
                             </div>
                             </div>
                             </td>
-                            <td id="product_delete_"><button type="button" class="btn btn-primary" id="delete_button" @click="deleteButton()">DELETE</button></td>
+                            <td id="product_delete_"><button type="button" class="btn btn-primary" id="delete_button" @click="deleteButton(event)">DELETE</button></td>
                          </tr>
                     </tbody>
                 </table>
@@ -136,7 +136,7 @@
   export default {
     methods: {
       async deleteButton(event) {
-        return this.featured_products.splice(this.featured_products.indexOf(event), 1);
+        return this.featured_products.splice(event, 1);
       }
     },
   computed: {
