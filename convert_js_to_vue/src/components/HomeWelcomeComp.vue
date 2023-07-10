@@ -1,9 +1,3 @@
-content_1: "WELCOME TO",
-        content_2: "KARZ.MOTOR",
-        content_3: "BUYING CARS HAS NEVER BEEN EASIER THAN THIS BEFORE",
-
-
-
 <template>
     <div>
         <section id="landing_page" class="container-fluid">

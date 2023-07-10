@@ -551,3 +551,8 @@ footer {
 #bottom_spacing {
     margin-bottom: 5rem;
 }
+
+#buttons_products_display {
+    display: flex;
+    justify-content: space-evenly;
+}

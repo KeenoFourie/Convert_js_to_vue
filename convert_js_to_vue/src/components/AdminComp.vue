@@ -81,7 +81,7 @@
                         <th class="list">Delete:</th>
                     </thead>
                     <tbody id="product_list">
-                        <tr class="list" v-for="featured_products in data" :key="featured_products.ID">
+                        <tr class="list" v-for="featured_products in featured_products" :key="featured_products.ID">
                             <td id="product_item_id" class="list">{{ featured_products.id }}</td>
                             <td id="product_car_model" class="list">{{ featured_products.car_model }}</td>
                             <td id="product_image" class="list"><img id="images_of_cars_in_javascript" v-bind:src="featured_products.image_url" class="card-img-top img-fluid" v-bind:alt="featured_products.car_model"></td>
@@ -116,7 +116,7 @@
                             </div>
                             </div>
                             </td>
-                            <td id="product_delete_"><button type="button" class="btn btn-primary" id="delete_button">DELETE</button></td>
+                            <td id="product_delete_"><button type="button" class="btn btn-primary" id="delete_button" @click="deleteButton()">DELETE</button></td>
                          </tr>
                     </tbody>
                 </table>
@@ -132,23 +132,22 @@
   </template>
   
   <script>
-    export default {
-      data() {
-        return {
-            data: []
-        }
-    },
+  // displaying products
+  export default {
     methods: {
-        async fetchData() {
-            const res = await fetch("https://keenofourie.github.io/Json-Server-for-JSeomp-products/index.json");
-            let parsedData = await res.json()
-            this.data = parsedData.featured_products;
-        }
+      async deleteButton(event) {
+        return this.featured_products.splice(this.featured_products.indexOf(event), 1);
+      }
     },
-    mounted() {
-      this.fetchData()
-    }
-  }
+  computed: {
+      featured_products() {
+          return this.$store.state.featured_products
+      },
+  },
+      mounted() {
+          this.$store.dispatch('fetchFeaturedproducts')
+      }
+};
 </script>
 
 <style scoped>
